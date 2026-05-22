@@ -13,7 +13,6 @@ dependencies = [
     "alembic (>=1.18.4,<2.0.0)"
 ]
 
-
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
@@ -45,7 +44,9 @@ addopts = '-p no:warnings'
 [tool.taskipy.tasks]
 lint = 'ruff check'
 format = 'ruff format'
-run = 'fastapi dev fastapi_zero/app.py'
+run = 'fastapi dev fastapi_zero/app.py --port 8001'
 pre_test = 'test lint'
 test = 'pytest -s -x --cov=fastapi_zero -vv'
 post_test = 'coverage html'
+
+

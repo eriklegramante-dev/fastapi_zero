@@ -10,7 +10,9 @@ requires-python = ">=3.13,<4.0"
 dependencies = [
     "fastapi[standard] (>=0.136.1,<0.137.0)",
     "sqlalchemy (>=2.0.49,<3.0.0)",
-    "alembic (>=1.18.4,<2.0.0)"
+    "alembic (>=1.18.4,<2.0.0)",
+    "pwdlib[argon2] (>=0.3.0,<0.4.0)",
+    "pyjwt (>=2.13.0,<3.0.0)"
 ]
 
 [build-system]
@@ -48,5 +50,3 @@ run = 'fastapi dev fastapi_zero/app.py --port 8001'
 pre_test = 'test lint'
 test = 'pytest -s -x --cov=fastapi_zero -vv'
 post_test = 'coverage html'
-
-
